@@ -1,0 +1,208 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: visibility var(--cubic-time),
+        opacity var(--cubic-time);
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal__wrap {
+    transform: scale(1.3);
+}
+
+.modal {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+}
+
+.modal__wrap {
+    position: relative;
+    width: 528px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transform: scale(1);
+    transition: transform var(--cubic-time);
+}
+
+.button__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.modal__icon {
+    fill: currentColor;
+    transition: color var(--cubic-time);
+}
+
+.button__close:hover,
+.button__close:focus {
+    color: var(--accnent-color);
+}
+
+.form {
+    width: 100%;
+    padding: 40px;
+}
+
+.form__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form__text {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 12px;
+    color: var(--primary-text-color);
+}
+
+.form__label {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: #757575;
+}
+
+.form__input {
+    display: block;
+    padding: 12px;
+    padding-left: 42px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: navy;
+    transition: border-color var(--cubic-time);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--primary-text-color);
+}
+
+.form__input:focus {
+    border-color: var(--accnent-color);
+}
+
+.form__icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transition: fill var(--cubic-time);
+}
+
+.form__input:focus+.form__icon {
+    fill: var(--accnent-color);
+}
+
+.form__textarea {
+    height: 120px;
+    resize: none;
+    outline: navy;
+    padding: 12px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--primary-text-color);
+    transition: border-color var(--cubic-time);
+}
+
+.form__textarea:focus {
+    border-color: var(--accnent-color);
+}
+
+.form__textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.check__label {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    color: #757575;
+}
+
+.check__input {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.check__link {
+    margin-left: 5px;
+    text-decoration: underline;
+    color: var(--accnent-color);
+}
+
+.check__icon {
+    display: flex;
+    width: 16px;
+    height: 15px;
+    margin-right: 7px;
+    border-radius: 2px;
+    border: 2px solid #212121;
+    transition: background-color var(--cubic-time),
+        border-color var(--cubic-time);
+}
+
+
+.check__input:checked+.check__icon {
+    border-color: var(--accnent-color);
+    background-color: var(--accnent-color);
+    background-image: url(../images/check.svg);
+    background-size: contain;
+    background-origin: border-box;
+}

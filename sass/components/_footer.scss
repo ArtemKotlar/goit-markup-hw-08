@@ -1,0 +1,89 @@
+.footer {
+    background: #2F303A;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer__wrap {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+}
+
+.address__link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color var(--cubic-time);
+}
+
+.address__link--maps {
+    color: var(--primary-white-color);
+}
+
+.address__item--maps {
+    margin-top: 20px;
+    
+}
+
+.address__item {
+    margin-top: 9px;
+}
+
+.address__link:hover,
+.address__link:focus {
+    color: var(--accnent-color);
+}
+
+.join__inner {
+    display: flex;
+    flex-direction: column;
+    margin-left: 92px;
+}
+
+.join__list {
+    display: flex;
+}
+
+/* Підписка на розсилку  */
+
+.subscription__inner {
+    margin-left: 93px;
+}
+
+.subscription__form {
+    display: flex;
+}
+
+.subscription__input {
+    display: block;
+    padding: 15px 16px;
+    width: 358px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    outline: navy;
+    transition: border-color var(--cubic-time);
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: var(--primary-white-color);
+    background: #2F303A;
+}
+
+.subscription__input:focus {
+    border-color: var(--accnent-color);
+}
