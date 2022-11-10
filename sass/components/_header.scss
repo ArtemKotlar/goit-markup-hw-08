@@ -1,5 +1,9 @@
 .header {
     border: 1px solid #ECECEC;
+
+    @media screen and (max-width: $pre-tabl) {
+        display: none;
+    }
 }
 
 .header__wrap {
@@ -80,12 +84,27 @@
 
 .aside {
     display: flex;
+    flex-direction: column;
     margin-left: auto;
+    align-items: flex-start;
+
+    &__item:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    @media screen and (min-width: $desc) {
+        flex-direction: row;
+
+        &__item:not(:last-child) {
+            margin-right: 30px;
+            margin-bottom: 0;
+        }
+    }
 }
 
-.aside__item:not(:last-child) {
-    margin-right: 30px;
-}
+// .aside__item:not(:last-child) {
+//     margin-right: 30px;
+// }
 
 .aside__icon {
     fill: currentColor;
@@ -95,14 +114,19 @@
 .aside__link {
     color: var(--title-text-color);
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
+    font-size: 12px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
-    padding: 32px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: color var(--cubic-time);
+
+    @media screen and (min-width: $desc) {
+        font-size: 14px;
+        line-height: 1.14;
+        padding: 32px 0;
+    }
 }
 
 .aside__link:hover,

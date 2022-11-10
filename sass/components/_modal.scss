@@ -82,13 +82,17 @@
 }
 
 .form__text {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     font-weight: 700;
     font-size: 20px;
-    line-height: 23px;
+    line-height: 1.5;
     margin-bottom: 12px;
     color: var(--primary-text-color);
+
+    @media screen and (min-width: $desc) {
+        font-size: 20px;
+        line-height: 1.15;
+    }
 }
 
 .form__label {
@@ -162,10 +166,15 @@
     justify-content: center;
     align-items: center;
     font-family: 'Roboto';
-    font-size: 14px;
-    line-height: 2;
+    font-size: 12px;
+    line-height: 1.17;
     letter-spacing: 0.03em;
     color: #757575;
+
+    @media screen and (min-width: $desc) {
+        font-size: 14px;
+        line-height: 1.7;
+    }
 }
 
 .check__input {

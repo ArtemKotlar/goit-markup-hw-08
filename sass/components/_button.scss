@@ -3,7 +3,7 @@
     border: 1px solid transparent;
     padding-top: 9px;
     padding-bottom: 9px;
-    min-width: 216px;
+    min-width: 200px;
 
     color: var(--primary-white-color);
     background: #2196F3;
@@ -17,6 +17,11 @@
     cursor: pointer;
     transition: background var(--cubic-time),
     box-shadow var(--cubic-time);
+
+    @media screen and (min-width: $desc) {
+        min-width: 216px;
+    }
+
 
     &--submit {
         display: block;

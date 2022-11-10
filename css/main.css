@@ -149,6 +149,11 @@ body {
 .header {
   border: 1px solid #ECECEC;
 }
+@media screen and (max-width: 767px) {
+  .header {
+    display: none;
+  }
+}
 
 .header__wrap {
   display: -webkit-box;
@@ -245,11 +250,29 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-left: auto;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
-
 .aside__item:not(:last-child) {
-  margin-right: 30px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .aside {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .aside__item:not(:last-child) {
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
 }
 
 .aside__icon {
@@ -260,10 +283,9 @@ body {
 .aside__link {
   color: var(--title-text-color);
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
-  padding: 32px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,6 +299,13 @@ body {
   -o-transition: color var(--cubic-time);
   transition: color var(--cubic-time);
 }
+@media screen and (min-width: 1200px) {
+  .aside__link {
+    font-size: 14px;
+    line-height: 1.14;
+    padding: 32px 0;
+  }
+}
 
 .aside__link:hover,
 .aside__link:focus {
@@ -287,9 +316,15 @@ body {
   color: #2196F3;
   font-family: "Raleway", cursive;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
+  font-size: 24px;
+  line-height: 1.17;
   text-decoration: none;
+}
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-size: 26px;
+    line-height: 1.2;
+  }
 }
 .logo__link {
   color: #000000;
@@ -304,7 +339,7 @@ body {
   border: 1px solid transparent;
   padding-top: 9px;
   padding-bottom: 9px;
-  min-width: 216px;
+  min-width: 200px;
   color: var(--primary-white-color);
   background: #2196F3;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -321,6 +356,11 @@ body {
   -o-transition: background var(--cubic-time), box-shadow var(--cubic-time);
   transition: background var(--cubic-time), box-shadow var(--cubic-time);
   transition: background var(--cubic-time), box-shadow var(--cubic-time), -webkit-box-shadow var(--cubic-time);
+}
+@media screen and (min-width: 1200px) {
+  .button__primaru {
+    min-width: 216px;
+  }
 }
 .button__primaru--submit {
   display: block;
@@ -437,8 +477,8 @@ body {
 .hero__title {
   color: var(--primary-white-color);
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.62;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   max-width: 696px;
@@ -446,27 +486,69 @@ body {
   margin-bottom: 30px;
   text-align: center;
 }
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}
 
 .hero {
   display: block;
   background: #2F303A;
   text-align: center;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 118px;
+  padding-bottom: 118px;
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
 }
 
 .hero__overlay {
   max-width: 1600px;
-  height: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   outline: 1px solid #C4C4C4;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero.jpg);
-  background-image: -o-linear-gradient(left, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(/images/mob/hero@1x.jpg) no-repeat center/cover, #c4c4c4;
+  background: -o-linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/mob/hero@1x.jpg) no-repeat center/cover, #c4c4c4;
+  background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/mob/hero@1x.jpg) no-repeat center/cover, #c4c4c4;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero__overlay {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(/images/mob/hero@2x.jpg) no-repeat center/cover, #c4c4c4;
+    background: -o-linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/mob/hero@2x.jpg) no-repeat center/cover, #c4c4c4;
+    background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/mob/hero@2x.jpg) no-repeat center/cover, #c4c4c4;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero__overlay {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(/images/tabl/hero@1x.jpg) no-repeat center/cover, #c4c4c4;
+    background: -o-linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/tabl/hero@1x.jpg) no-repeat center/cover, #c4c4c4;
+    background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/tabl/hero@1x.jpg) no-repeat center/cover, #c4c4c4;
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-o-min-device-pixel-ratio: 2/1), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero__overlay {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(/images/tabl/hero@2x.jpg) no-repeat center/cover, #c4c4c4;
+    background: -o-linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/tabl/hero@2x.jpg) no-repeat center/cover, #c4c4c4;
+    background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/tabl/hero@2x.jpg) no-repeat center/cover, #c4c4c4;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero__overlay {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(/images/desc/hero@1x.jpg) no-repeat center/cover, #c4c4c4;
+    background: -o-linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/desc/hero@1x.jpg) no-repeat center/cover, #c4c4c4;
+    background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/desc/hero@1x.jpg) no-repeat center/cover, #c4c4c4;
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-o-min-device-pixel-ratio: 2/1), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero__overlay {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(/images/desc/hero@2x.jpg) no-repeat center/cover, #c4c4c4;
+    background: -o-linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/desc/hero@2x.jpg) no-repeat center/cover, #c4c4c4;
+    background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/desc/hero@2x.jpg) no-repeat center/cover, #c4c4c4;
+  }
 }
 
 .features__list {
@@ -1178,17 +1260,18 @@ body {
 }
 
 .form__text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  text-align: center;
   font-weight: 700;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 1.5;
   margin-bottom: 12px;
   color: var(--primary-text-color);
+}
+@media screen and (min-width: 1200px) {
+  .form__text {
+    font-size: 20px;
+    line-height: 1.15;
+  }
 }
 
 .form__label {
@@ -1302,10 +1385,16 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-family: "Roboto";
-  font-size: 14px;
-  line-height: 2;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: #757575;
+}
+@media screen and (min-width: 1200px) {
+  .check__label {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 }
 
 .check__input {
