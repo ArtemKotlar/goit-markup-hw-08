@@ -1,15 +1,15 @@
 .header {
     border: 1px solid #ECECEC;
-
-    @media screen and (max-width: $pre-tabl) {
-        display: none;
-    }
 }
 
 .header__wrap {
     display: flex;
     align-items: center;
     padding-left: 10px;
+
+    @media screen and (max-width: $pre-tabl) {
+            display: none;
+        }
 }
 
 .header__navigation {
@@ -20,6 +20,9 @@
 
 .site-nav {
     display: flex;
+    @media screen and (min-width: $mob) and (max-width: $pre-tabl) {
+        flex-direction: column;
+    }
 }
 
 .site-nav__item {
@@ -42,6 +45,15 @@
     letter-spacing: 0.02em;
     text-decoration: none;
     transition: color var(--cubic-time);
+
+    @media screen and (min-width: $mob) and (max-width: $pre-tabl) {
+        font-size: 40px;
+        line-height: 1.18;
+        padding: 0;
+        padding-bottom: 32px;
+    }
+
+    
 }
 
 .site-nav__link:hover,
@@ -50,16 +62,18 @@
 }
 
 .site-nav__link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background-color: var(--accnent-color);
-    opacity: 0;
-    transition: opacity var(--cubic-time);
+    @media screen and (min-width: $tabl) {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: var(--accnent-color);
+        opacity: 0;
+        transition: opacity var(--cubic-time);
+    }
 }
 
 .site-nav__link:hover::after,
@@ -68,14 +82,16 @@
 }
 
 .current::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background-color: var(--accnent-color);
+    @media screen and (min-width: $tabl) {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: var(--accnent-color);
+    }
 }
 
 .site-nav__link.current {
@@ -102,13 +118,22 @@
     }
 }
 
-// .aside__item:not(:last-child) {
-//     margin-right: 30px;
-// }
 
 .aside__icon {
     fill: currentColor;
     margin-right: 10px;
+
+    @media screen and (min-width: $tabl) and (max-width: $pre-desc) {
+        &--nvelope { 
+            width: 14px;
+            height: 12px;
+        }
+
+        &--smartphone {
+            width: 10px;
+            height: 14px;
+        }
+    }
 }
 
 .aside__link {
