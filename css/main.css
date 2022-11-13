@@ -541,6 +541,11 @@ body {
   color: #000000;
   margin-right: 93px;
 }
+@media screen and (max-width: 767px) {
+  .logo__link {
+    margin-right: 0;
+  }
+}
 .logo__footer {
   color: #FFFFFF;
 }
