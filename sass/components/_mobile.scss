@@ -1,6 +1,6 @@
 .container-mobile {
    
-    @media screen and (min-width: $mob) {
+    @media screen and (max-width: $pre-tabl) {
         display: block;
     }
 
@@ -110,12 +110,14 @@
 
 .socials-menu {
     display: flex;
+    flex-wrap: wrap;
     margin-left: -10px;
     margin-top: 64px;
 }
 
 .socials-menu__item {
     padding: 0 10px;
+    margin-top: 10px;
 
     &:not(:first-child) {
         padding-left: 10 px;

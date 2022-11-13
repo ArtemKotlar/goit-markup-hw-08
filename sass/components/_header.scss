@@ -20,7 +20,7 @@
 
 .site-nav {
     display: flex;
-    @media screen and (min-width: $mob) and (max-width: $pre-tabl) {
+    @media screen and (max-width: $pre-tabl) {
         flex-direction: column;
     }
 }
@@ -46,7 +46,7 @@
     text-decoration: none;
     transition: color var(--cubic-time);
 
-    @media screen and (min-width: $mob) and (max-width: $pre-tabl) {
+    @media screen and (max-width: $pre-tabl) {
         font-size: 40px;
         line-height: 1.18;
         padding: 0;
